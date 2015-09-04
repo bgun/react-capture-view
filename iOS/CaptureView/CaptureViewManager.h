@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Facebook. All rights reserved.
 //
 
-#import "RCTViewManager.h"
+#import <RCTViewManager.h>
+#import "CaptureView.h"
 
 @interface CaptureViewManager : RCTViewManager
 

@@ -6,13 +6,10 @@
 //  Copyright (c) 2015 Facebook. All rights reserved.
 //
 
+#import <RCTView.h>
+#import <RCTBridge.h>
+
 #import "CaptureView.h"
-
-#import "RCTView.h"
-#import "RCTBridge.h"
-
-@synthesize bridge = _bridge;
-
 
 @implementation CaptureView
 

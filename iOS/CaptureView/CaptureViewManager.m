@@ -7,12 +7,16 @@
 //
 
 #import "CaptureViewManager.h"
-
 #import "CaptureView.h"
 
 #import "RCTBridge.h"
+#import "RCTSparseArray.h"
+#import "RCTUIManager.h"
+#import "RCTViewManager.h"
 
-@implementation CaptureViewManager
+@implementation RCTViewManager (CaptureViewManager)
+
+RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(export:(NSNumber *)reactTag callback:(RCTResponseSenderBlock)callback) {
 
