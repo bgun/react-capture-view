@@ -10,22 +10,21 @@ var {
   StyleSheet,
   Text,
   View,
+  requireNativeComponent
 } = React;
 
-var CaptureView = React.createClass({
+var CaptureView = require('NativeModules').CaptureView;
+
+var CaptureViewExample = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Text style={styles.avoid}>This should not be captured.</Text>
+        <CaptureView>
+          <Text style={styles.welcome}>
+            Welcome to React Native!
+          </Text>
+        </CaptureView>
       </View>
     );
   }
@@ -38,16 +37,15 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  avoid: {
+    color: '#FF0000',
+    fontSize: 20
+  },
   welcome: {
-    fontSize: 20,
+    fontSize: 50,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
 
-AppRegistry.registerComponent('CaptureView', () => CaptureView);
+AppRegistry.registerComponent('CaptureViewExample', () => CaptureView);
